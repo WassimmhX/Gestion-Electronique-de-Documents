@@ -9,12 +9,10 @@ function Login({ onLoginSuccess, goToSignup }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const formData = new URLSearchParams();
-      formData.append('username', email);
-      formData.append('password', password);
 
-      const response = await axios.post('http://localhost:5000/login', formData, {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      const response = await axios.post('http://localhost:5000/login', {
+        "email":email,
+        "password":password
       });
 
       localStorage.setItem('token', response.data.access_token);

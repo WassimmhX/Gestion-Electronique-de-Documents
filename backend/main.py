@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from paddleocr import PaddleOCR
 from motor.motor_asyncio import AsyncIOMotorClient
 from passlib.context import CryptContext
+from pydantic import BaseModel
 import cv2
 import os
 import tempfile
@@ -40,24 +41,27 @@ def verify_password(plain_password: str, hashed_password: str):
 
 
 # API Endpoints
-
+class SignupRequest(BaseModel):
+    email: str
+    password: str
 @app.post("/signup")
-async def signup(email: str = Form(...), password: str = Form(...)):
-    existing_user = await users_collection.find_one({"email": email})
+async def signup(request: SignupRequest):
+    existing_user = await users_collection.find_one({"email": request.email})
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already registered")
 
-    hashed_password = hash_password(password)
-    user = {"email": email, "password": hashed_password}
+    hashed_password = hash_password(request.password)
+    user = {"email": request.email, "password": hashed_password}
     await users_collection.insert_one(user)
 
     return {"message": "User created successfully"}
 
 
+
 @app.post("/login")
-async def login(email: str = Form(...), password: str = Form(...)):
-    user = await users_collection.find_one({"email": email})
-    if not user or not verify_password(password, user["password"]):
+async def login(request: SignupRequest):
+    user = await users_collection.find_one({"email": request.email})
+    if not user or not verify_password(request.password, user["password"]):
         raise HTTPException(status_code=400, detail="Invalid email or password")
 
     return {"message": "Login successful"}

@@ -10,8 +10,8 @@ function Signup({ onSignupSuccess, goToLogin }) {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/signup', {
-        email,
-        password
+        "email":email,
+        "password":password
       });
       onSignupSuccess();
     } catch (err) {
