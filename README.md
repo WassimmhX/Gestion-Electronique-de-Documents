@@ -66,7 +66,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Start the backend server:
+5. Install dependencies:
+```bash
+ollama run qwen2.5
+```
+
+6. Start the backend server:
 ```bash
 uvicorn main:app --reload --port 5000
 ```
