@@ -100,19 +100,12 @@ npm run dev
 3. Upload documents through the interface
 4. View processed documents and their extracted text
 
-## API Endpoints
 
-- `POST /signup` - Create a new user account
-- `POST /login` - Authenticate user
-- `POST /upload` - Upload and process documents
+## Video Tutorial
 
-## Contributing
+Watch the video tutorial for a walkthrough of the document management system:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+[Video Link](https://drive.google.com/file/d/1i5CGDpYGJoOnQkzthLql0PyqfiKZUsby/view?usp=drive_link)
 
 ## License
 
