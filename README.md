@@ -2,6 +2,11 @@
 
 A modern web application for document management and processing, featuring OCR capabilities, AI files recognition and understanding and user authentication.
 100% local solution without using any API.
+## Video Tutorial
+
+Watch the video tutorial for a walkthrough of the document management system:
+
+[Video Link](https://drive.google.com/file/d/1i5CGDpYGJoOnQkzthLql0PyqfiKZUsby/view?usp=drive_link)
 ## Features
 
 - User authentication (login/signup)
@@ -101,11 +106,6 @@ npm run dev
 4. View processed documents and their extracted text
 
 
-## Video Tutorial
-
-Watch the video tutorial for a walkthrough of the document management system:
-
-[Video Link](https://drive.google.com/file/d/1i5CGDpYGJoOnQkzthLql0PyqfiKZUsby/view?usp=drive_link)
 
 ## License
 
