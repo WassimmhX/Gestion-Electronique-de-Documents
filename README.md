@@ -1,7 +1,7 @@
 # Document Management System
 
-A modern web application for document management and processing, featuring OCR capabilities and user authentication.
-
+A modern web application for document management and processing, featuring OCR capabilities, AI files recognition and understanding and user authentication.
+100% local solution without using any API.
 ## Features
 
 - User authentication (login/signup)
